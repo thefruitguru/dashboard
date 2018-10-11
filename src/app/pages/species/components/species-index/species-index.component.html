@@ -1,0 +1,21 @@
+<mat-toolbar color="warn">
+    <span>{{ title }}</span>
+</mat-toolbar>
+<mat-drawer-container>
+    <mat-drawer mode="side" opened>
+        <mat-nav-list>
+            <mat-list-item *ngFor="let item of menu" [routerLink]="item.router">
+                <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+                {{ item.title }}
+            </mat-list-item>
+            <mat-list-item (click)="logout()">
+                <mat-icon matListIcon>folder</mat-icon>
+                Sair
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <mat-progress-bar *ngIf="loadStatus" mode="indeterminate"></mat-progress-bar>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

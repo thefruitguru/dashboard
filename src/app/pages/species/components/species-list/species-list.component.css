@@ -1,0 +1,13 @@
+.specie-list {
+    width: calc(100% - 80px);
+    margin: 40px;
+}
+
+mat-spinner {
+    margin: 10% auto;
+}
+
+.text-spinner {
+    margin-top: -8%;
+    text-align: center;
+}

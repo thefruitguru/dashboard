@@ -1,0 +1,59 @@
+<div class="specie-form">
+  <h2>Registrar Espécie</h2>
+  <p *ngIf="statusMessage" class="message-success">* Espécie registrada com sucesso!!!</p>
+  <form [formGroup]="specieForm" (ngSubmit)="submit()">
+    <mat-form-field class="specie-full-width">
+      <input formControlName="nomeCientifico" matInput placeholder="Nome Científico">
+    </mat-form-field>
+
+    <mat-form-field class="specie-full-width">
+      <input formControlName="nomePopular" matInput placeholder="Nome Popular">
+    </mat-form-field>
+
+    <mat-form-field class="specie-full-width">
+      <input formControlName="familia" matInput placeholder="Família">
+    </mat-form-field>
+
+    <mat-form-field class="specie-full-width">
+      <input formControlName="formaDeVida" matInput placeholder="Forma de Vida">
+    </mat-form-field>
+
+    <mat-form-field class="specie-full-width">
+      <input formControlName="usos" matInput placeholder="Usos">
+    </mat-form-field>
+
+    <mat-form-field class="specie-full-width">
+      <input formControlName="cores" matInput placeholder="Cores">
+    </mat-form-field>
+
+    <mat-form-field class="specie-full-width">
+      <input formControlName="textura" matInput placeholder="Textura">
+    </mat-form-field>
+
+    <mat-form-field class="specie-full-width">
+      <input formControlName="sabores" matInput placeholder="Sabores">
+    </mat-form-field>
+
+    <mat-form-field class="specie-full-width">
+      <textarea formControlName="caracteristicas" matInput placeholder="Características"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="specie-full-width">
+      <input formControlName="biomaGeral" matInput placeholder="Bioma Geral">
+    </mat-form-field>
+
+    <mat-form-field class="specie-full-width">
+      <input formControlName="subBioma" matInput placeholder="Sub-Bioma">
+    </mat-form-field>
+
+    <mat-form-field class="specie-full-width">
+      <input formControlName="reproducao" matInput placeholder="Reprodução">
+    </mat-form-field>
+
+    <mat-form-field class="specie-full-width">
+      <input formControlName="formato" matInput placeholder="Formato">
+    </mat-form-field>
+
+    <button class="button-register" mat-button mat-raised-button color="warn" [disabled]="specieForm.invalid">Registrar</button>
+  </form>
+</div>

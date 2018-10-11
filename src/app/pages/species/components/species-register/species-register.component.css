@@ -1,0 +1,16 @@
+.specie-full-width {
+    width: 100%;
+}
+
+.specie-form {
+    width: calc(100% - 80px);
+    margin: 40px;
+}
+
+.button-register {
+    margin-top: 10px;
+}
+
+.message-success {
+    color: green;
+}

@@ -1,0 +1,14 @@
+<div class="specie-list">
+  <h2 *ngIf="!statusSpecieList">Lista de Espécies</h2>
+  <mat-spinner *ngIf="statusSpecieList"></mat-spinner>
+  <p class="text-spinner" *ngIf="statusSpecieList">Carregando lista de espécies...</p>
+  <p *ngIf="!specieList.length && !statusSpecieList">
+    * Não existe espécies registras
+  </p>
+  <mat-nav-list>
+    <mat-list-item *ngFor="let specie of specieList">
+      {{ specie.getNomeCientifico() }}
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-nav-list>
+</div>
