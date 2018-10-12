@@ -30,8 +30,6 @@ export class AuthGuard implements CanActivate {
     return Observable.create(observer => {
       this.authProvider.onAuthStateChanged(user => {
         if (user) {
-          this.authService.redirectUrl = url;
-          this.router.navigate([url]);
           observer.next(true);
         } else {
           observer.next(false);

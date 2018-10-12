@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { tap, delay } from 'rxjs/operators';
 import * as firebase from 'firebase';
 
 @Injectable({
@@ -18,7 +17,6 @@ export class AuthService {
   login(email: string, password: string): Observable<boolean> {
     return Observable.create(observe => {
       this.authProvider.signInWithEmailAndPassword(email, password).then(() => {
-        this.isLoggedIn = true;
         observe.next(true);
       }).catch(() => {
         observe.next(false);
@@ -26,7 +24,13 @@ export class AuthService {
     });
   }
 
-  logout(): void {
-    this.isLoggedIn = false;
+  logout(): Observable<boolean> {
+    return Observable.create((observe) => {
+      this.authProvider.signOut().then(() => {
+        observe.next(true);
+      }).catch(() => {
+        observe.next(false);
+      });
+    });
   }
 }

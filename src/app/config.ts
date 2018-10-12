@@ -1,8 +1,8 @@
 export const config = {
-    apiKey: "AIzaSyB-TGiZKjj84GctmMUZBpDSzdUioL5QFAw",
-    authDomain: "test-firestore-6b052.firebaseapp.com",
-    databaseURL: "https://test-firestore-6b052.firebaseio.com",
-    projectId: "test-firestore-6b052",
-    storageBucket: "test-firestore-6b052.appspot.com",
-    messagingSenderId: "581528844765"
+    apiKey: "AIzaSyBUD3WypURjumDyeKnu1yhT6lTvQogqFxU",
+    authDomain: "the-fruit-guru.firebaseapp.com",
+    databaseURL: "https://the-fruit-guru.firebaseio.com",
+    projectId: "the-fruit-guru",
+    storageBucket: "the-fruit-guru.appspot.com",
+    messagingSenderId: "364137017825"
 };

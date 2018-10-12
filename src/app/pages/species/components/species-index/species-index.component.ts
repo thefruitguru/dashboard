@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SpeciesRegisterComponent } from '../species-register/species-register.component';
 import { AuthService } from '../../../securitys/services/auth/auth.service';
+import { Router } from '@angular/router';
 
 interface Menu {
   title: string;
@@ -23,7 +24,8 @@ export class SpeciesIndexComponent implements OnInit {
   ]; 
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    public router: Router
   ) {
     SpeciesRegisterComponent.saveRegisterLoad.subscribe((status) => {
       if (status) {
@@ -38,7 +40,10 @@ export class SpeciesIndexComponent implements OnInit {
   }
 
   logout() {
-    console.log('sair');
-    this.authService.logout();
+    this.authService.logout().subscribe(status => {
+      if (status) {
+        this.router.navigate(['/login']);
+      }
+    });
   }
 }
