@@ -7,7 +7,7 @@
   </p>
   <mat-nav-list>
     <mat-list-item *ngFor="let specie of specieList">
-      {{ specie.getNomeCientifico() }}
+      {{ specie.getNomeCientifico() }} <b> - {{ specie.getNomePopular() }}</b>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-nav-list>
